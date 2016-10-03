@@ -19,10 +19,10 @@ public class ConnectionFactory {
 			try {
 				String driverName = "com.mysql.jdbc.Driver";
 				Class.forName(driverName);
-				String serverName = "127.0.0.1:3306";
-				String myDataBase = "biblioteca";
+				String serverName = "192.68.0.200:3306";
+				String myDataBase = "bibliotecateste";
 				String url = "jdbc:mysql://" + serverName + "/" + myDataBase;
-				String userName = "root";
+				String userName = "aluno";
 				String passWord = "123456";
 				Connection connection = DriverManager.getConnection(url, userName, passWord);
 				return connection;

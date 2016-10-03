@@ -5,63 +5,79 @@
  */
 package br.com.master.model;
 
+import java.sql.Date;
+
+
+
 /**
  *
  * @author Aluno
  */
 public class LivrosModel {
+
     private int id;
-	private int isbn;
-	private String titulo;
-	private int ano;
-	private String editora;
-	private String autor;
+    private int isbn;
+    private String titulo;
+    private int ano;
+    private String editora;
+    private String autor;
+    private Date data; 
 
-	public int getId() {
-		return id;
-	}
+    public Date getData() {
+        return data;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setData(Date data) {
+        this.data = data;
+    }
+    
+            
+    
+    public int getId() {
+        return id;
+    }
 
-	public int getIsbn() {
-		return isbn;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setIsbn(int isbn) {
-		this.isbn = isbn;
-	}
+    public int getIsbn() {
+        return isbn;
+    }
 
-	public String getTitulo() {
-		return titulo;
-	}
+    public void setIsbn(int isbn) {
+        this.isbn = isbn;
+    }
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
+    public String getTitulo() {
+        return titulo;
+    }
 
-	public int getAno() {
-		return ano;
-	}
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
-	public void setAno(int ano) {
-		this.ano = ano;
-	}
+    public int getAno() {
+        return ano;
+    }
 
-	public String getEditora() {
-		return editora;
-	}
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
 
-	public void setEditora(String editora) {
-		this.editora = editora;
-	}
+    public String getEditora() {
+        return editora;
+    }
 
-	public String getAutor() {
-		return autor;
-	}
+    public void setEditora(String editora) {
+        this.editora = editora;
+    }
 
-	public void setAutor(String autor) {
-		this.autor = autor;
-	}   
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
 }
