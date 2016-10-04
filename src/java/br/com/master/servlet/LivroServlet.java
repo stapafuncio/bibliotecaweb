@@ -38,6 +38,7 @@ import javax.servlet.annotation.WebServlet;
             int ano = Integer.parseInt(request.getParameter("ano"));
             String editora = request.getParameter("editora");
             String autor = request.getParameter("autor");
+            Double valor = Double.parseDouble(request.getParameter("valor"));
            
 
             LivrosModel livrosmodel = new LivrosModel();
@@ -46,6 +47,7 @@ import javax.servlet.annotation.WebServlet;
             livrosmodel.setAutor(autor);
             livrosmodel.setEditora(editora);
             livrosmodel.setTitulo(titulo);
+            livrosmodel.setValor(valor);
 
             try {
                 LivroDao livroDao = new LivroDao();

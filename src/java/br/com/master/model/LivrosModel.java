@@ -22,7 +22,17 @@ public class LivrosModel {
     private String editora;
     private String autor;
     private Date data; 
+    private Double valor;
 
+    public Double getValor() {
+        return valor;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
+    
     public Date getData() {
         return data;
     }

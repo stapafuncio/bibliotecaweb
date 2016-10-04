@@ -4,6 +4,7 @@
     Author     : luan
 --%>
 
+<%@page import="java.text.NumberFormat"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="br.com.master.model.LivrosModel"%>
 <%@page import="br.com.master.dao.LivroDao"%>
@@ -13,6 +14,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Listar Livro</title>
+        <link rel="shortcut icon" href="WEB-INF/Printing-Book-Stack-icon.png" type="image/x-icon" />
     </head>
     <body>
         <link rel="stylesheet" type="text/css" href="estiloCSS.css">
@@ -24,10 +26,13 @@
                 <td class="alinhaCentro">Editora</td>
                 <td class="alinhaCentro"> Autor </td>
                 <td class="alinhaCentro"> Data </td> 
+                <td class="alinhaCentro"> valor </td>
             </tr>
             <%
                 LivroDao lr = new LivroDao();
                 SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yy");
+                NumberFormat formata = NumberFormat.getCurrencyInstance();
+
                 for (LivrosModel livros : lr.listalivro()) {
             %>
             <tr>
@@ -37,6 +42,7 @@
                 <td><%=livros.getEditora()%></td>
                 <td><%=livros.getAutor()%></td>
                 <td><%=dt.format(livros.getData())%></td>
+                <td><%=formata.format(livros.getValor())%></td>
             </tr>
             <%}%>
         </table>

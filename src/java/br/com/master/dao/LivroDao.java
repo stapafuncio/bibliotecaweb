@@ -29,7 +29,7 @@ public class LivroDao {
     }
 
     public void adicionaProduto(LivrosModel livro) {
-        String sql = "INSERT INTO LIVROS(ISBN, TITULO, ANO, EDITORA, AUTOR) VALUES (?,?,?,?,?)";
+        String sql = "INSERT INTO LIVROS(ISBN, TITULO, ANO, EDITORA, AUTOR,VALOR) VALUES (?,?,?,?,?,?)";
         try {
             stmt = conecta.prepareStatement(sql);
             stmt.setInt(1, livro.getIsbn());
@@ -37,6 +37,7 @@ public class LivroDao {
             stmt.setInt(3, livro.getAno());
             stmt.setString(4, livro.getEditora());
             stmt.setString(5, livro.getAutor());
+            stmt.setDouble(6, livro.getValor());
             if(stmt.execute()){
                 System.out.println("Executado com sucesso");
             }
@@ -47,7 +48,7 @@ public class LivroDao {
     }
 
     public void removeProduto() {
-
+           
     }
 
     public List<LivrosModel> listalivro() {
@@ -67,6 +68,7 @@ public class LivroDao {
                 livro.setIsbn(rs.getInt("isbn"));
                 livro.setTitulo(rs.getString("titulo"));
                 livro.setData(rs.getDate("DATA_CAD"));
+                livro.setValor(rs.getDouble("valor"));
                 
                 listalivros.add(livro);
             }
