@@ -29,7 +29,7 @@ public class LivroDao {
     }
 
     public void adicionaProduto(LivrosModel livro) {
-        String sql = "INSERT INTO LIVROS(ISBN, TITULO, ANO, EDITORA, AUTOR,valor) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO LIVROS(ISBN, TITULO, ANO, EDITORA, AUTOR,VALOR) VALUES (?,?,?,?,?,?)";
         try {
             stmt = conecta.prepareStatement(sql);
             stmt.setInt(1, livro.getIsbn());
@@ -38,24 +38,18 @@ public class LivroDao {
             stmt.setString(4, livro.getEditora());
             stmt.setString(5, livro.getAutor());
             stmt.setDouble(6, livro.getValor());
-            if(stmt.execute()){
-                System.out.println("Executado com sucesso");
-            }
+            stmt.execute();
             stmt.close();
         } catch (SQLException e) {
             System.out.println("Erro ao adicionar produto: " + e);
         }
     }
-
     public void removeProduto() {
-           
+
     }
-
-    public List<LivrosModel> listalivro() {
-
-        List<LivrosModel> listalivros = new ArrayList<>();
+    public List <LivrosModel> getLista() {
+        List <LivrosModel> listalivros = new ArrayList<>();
         String sql = "SELECT * FROM LIVROS";
-
         try {
             stmt = conecta.prepareStatement(sql);
             rs = stmt.executeQuery();
