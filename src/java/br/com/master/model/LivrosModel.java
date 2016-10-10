@@ -7,12 +7,6 @@ package br.com.master.model;
 
 import java.sql.Date;
 
-
-
-/**
- *
- * @author Aluno
- */
 public class LivrosModel {
 
     private int id;

@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Cadastrar Livro</title>
+        <title>Digite o valor do livro</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Latest compiled and minified CSS -->
@@ -18,33 +18,55 @@ and open the template in the editor.
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </head>
+    <style>
+        .unico{
+       font-size: 25px;
+       text-align: center
+            
+        }
+    </style>
     <body>
-        <style>
-            div {
-                font-size: 25px;
-            }
-        </style>
-        <div class="text-center"> Cadastro de livros </div>
-        <form action="LivroServlet" method="GET">
-            <div>
-                ISBN: <input type="text" class="form-control" name="isbn"><br>
+        <div class="unico"> Cadastro de livros </div>
+        <form class="form-horizontal" action="LivroServlet" method="GET">
+            <div class="form-group">
+                <label   class="col-sm-2 control-label">Digite o ISBN</label>
+                <div class="col-sm-9">
+                    <input  name="isbn" type="text" class="form-control" placeholder="ISBN">
+                </div>
             </div>
-            <div>
-                Titulo do livro: <input type="text" class="form-control" name="titulo"><br>
+            <div class="form-group">
+                <label   class="col-sm-2 control-label">Digite o tititulo do livro</label>
+                <div class="col-sm-9">
+                    <input name="titulo" type="text" class="form-control"  placeholder="Titulo">
+                </div>
             </div>
-            <div>
-                Digite o ano do livro: <input type="text" class="form-control" name="ano"><br>
+            <div class="form-group">
+                <label   class="col-sm-2 control-label">Digite o ano do livro</label>
+                <div class="col-sm-9">
+                    <input type="text" name="ano" class="form-control"  placeholder="Ano">
+                </div>
             </div>
-            <div>
-                Digite a editora <input type="text"  class="form-control" name="editora"><br>
+            <div class="form-group">
+                <label  class="col-sm-2 control-label">Digite a editora</label>
+                <div class="col-sm-9">
+                    <input  name="editora" type="text" class="form-control"  placeholder="Editora">
+                </div>
             </div>
-            <div>
-                Digite o autor <input type="text"  class="form-control" name="autor"><br>
+            <div class="form-group">
+                <label   class="col-sm-2 control-label">Digite o autor</label>
+                <div class="col-sm-9">
+                    <input  name="autor" type="text" class="form-control"  placeholder="Autor">
+                </div>
             </div>
-            <div>
-                Digite o valor do livro <input type="text"  class="form-control" name="valor"><br>
+            <div class="form-group">
+                <label    class="col-sm-2 control-label">Digite o valor</label>
+                <div class="col-sm-9">
+                    <input name="valor" type="text" class="form-control" placeholder="valor">
+                </div>
+                <div class="col-sm-2 control-label">
+                    <input type="submit" class="btn btn-primary" value="Gravar Produto"><br>
+                </div>
             </div>
-            <input type="submit" class="btn btn-primary" value="Gravar Produto"><br>
         </form>
     </body>
 </html>

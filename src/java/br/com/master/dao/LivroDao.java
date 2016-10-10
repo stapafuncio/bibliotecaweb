@@ -29,7 +29,7 @@ public class LivroDao {
     }
 
     public void adicionaProduto(LivrosModel livro) {
-        String sql = "INSERT INTO LIVROS(ISBN, TITULO, ANO, EDITORA, AUTOR,VALOR) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO LIVROS(ISBN, TITULO, ANO, EDITORA, AUTOR,valor) VALUES (?,?,?,?,?,?)";
         try {
             stmt = conecta.prepareStatement(sql);
             stmt.setInt(1, livro.getIsbn());
@@ -69,7 +69,6 @@ public class LivroDao {
                 livro.setTitulo(rs.getString("titulo"));
                 livro.setData(rs.getDate("DATA_CAD"));
                 livro.setValor(rs.getDouble("valor"));
-                
                 listalivros.add(livro);
             }
             stmt.close();
