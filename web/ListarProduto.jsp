@@ -1,9 +1,10 @@
 <%-- 
     Document   : ListarProduto
     Created on : 27/09/2016, 20:31:37
-    Author     : luan
+    Author     : Leonardo
 --%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"  %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"  %>
 <%@page import="java.text.NumberFormat"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="br.com.master.model.LivrosModel"%>
@@ -17,6 +18,7 @@
         <link rel="shortcut icon" href="WEB-INF/Printing-Book-Stack-icon.png" type="image/x-icon" />
     </head>
     <body>
+        <c:import url="Cabecalho.jsp"/>
         <jsp:useBean id="dao" class="br.com.master.dao.LivroDao" />
         <link rel="stylesheet" type="text/css" href="estiloCSS.css">
         <table>
@@ -37,10 +39,11 @@
                 <td>${livro.ano}</td>
                 <td>${livro.editora}</td>
                 <td>${livro.autor}</td>
-                <td>${livro.data}</td>
+                <td><fmt:formatDate value="${livro.data}"pattern="dd/MM/yyyy"/></td>
                 <td>${livro.valor}</td>
             </tr>
             </c:forEach>
         </table>
+        <c:import url="rodape.jsp"/>
     </body>
 </html>
